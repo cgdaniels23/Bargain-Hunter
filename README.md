@@ -32,7 +32,9 @@ No paid API, hosting, or backend is required by this version. Your assistant's p
 
 ## Status
 
-Skill structure, bundled references, and agent metadata have been checked. Live retailer/cart compatibility has not been tested. Prices and stock can change; unknown tax, shipping, or fees are marked rather than treated as confirmed totals. No automatic purchases or background monitoring.
+**Approved for pilot use — search and comparison only.** Eight synthetic scenarios passed, and a public-web search smoke test completed. Read the [validation record and test evidence](VALIDATION.md) for the exact scope.
+
+Live retailer/cart compatibility remains untested. This is limited internal validation, not third-party certification. Prices and stock can change; unknown tax, shipping, or fees stay clearly marked. No automatic purchases or background monitoring.
 
 ## License and credit
 

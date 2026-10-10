@@ -1,0 +1,9 @@
+{
+  "notice":"Synthetic retailer evidence, not a live shopping result.",
+  "checked_at":"2026-10-10T18:29:00-05:00",
+  "offers":[{"id":"F","product":"400L foldable double-decker wagon","seller":"Fixture Store F","condition":"new","quantity":1,"features_verified":true,"stock":"available","item_price":60,"shipping":0,"tax":4.95,"fees":0,"cost_evidence":"verified fixture quote","normal_discounted_item_price":150,"baseline_evidence":"same exact model and condition; documented fixture price history; 2026-10-01","url":"https://store-f.example/wagon"}],
+  "requests":[
+    {"id":"T7","request":"Find one new foldable double-decker wagon with at least 400 liters: $52 or less all-in AND at least 50% off a verified normal discounted item price. Compare only the supplied offer. No other restrictions."},
+    {"id":"T8","request":"Find one new foldable double-decker wagon with at least 400 liters: EITHER $52 or less all-in OR at least 50% off a verified normal discounted item price. Compare only the supplied offer. No other restrictions."}
+  ]
+}
