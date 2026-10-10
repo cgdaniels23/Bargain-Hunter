@@ -1,0 +1,115 @@
+{
+  "synthetic": true,
+  "note": "All products, merchant labels, dates, destinations, prices and quotes below are fabricated fixture evidence. No real offers.",
+  "requests": [
+    {
+      "id": "U1",
+      "request": "Find seasonal XL wipes. Bulk packs are fine; rank by delivered cost per wipe. No budget cap. Destination Zone A.",
+      "offers": [
+        {
+          "id": "A",
+          "scent": "Autumn spice",
+          "seasonal_verified": true,
+          "packs": 3,
+          "wipes_per_pack": 48,
+          "item_price": 12,
+          "shipping": 6,
+          "tax": 0,
+          "fees": 0,
+          "stock": "in stock",
+          "arrival": "2030-10-12",
+          "destination": "Zone A"
+        },
+        {
+          "id": "B",
+          "scent": "Autumn spice",
+          "seasonal_verified": true,
+          "packs": 6,
+          "wipes_per_pack": 48,
+          "item_price": 24,
+          "shipping": 0,
+          "tax": 0,
+          "fees": 0,
+          "stock": "in stock",
+          "arrival": "2030-10-13",
+          "destination": "Zone A"
+        },
+        {
+          "id": "C",
+          "scent": "Fragrance free",
+          "seasonal_verified": false,
+          "packs": 6,
+          "wipes_per_pack": 48,
+          "item_price": 15,
+          "shipping": 0,
+          "tax": 0,
+          "fees": 0,
+          "stock": "in stock",
+          "arrival": "2030-10-12",
+          "destination": "Zone A"
+        }
+      ]
+    },
+    {
+      "id": "U2",
+      "request": "Find seasonal XL wipes and show the discount against the first search price. No cap, rank by item price per wipe.",
+      "first_search_offer": {
+        "scent": "Autumn spice",
+        "packs": 3,
+        "wipes_per_pack": 48,
+        "item_price": 15,
+        "stock": "in stock",
+        "source": "Fixture Merchant First",
+        "date": "2030-10-10",
+        "normal_price_history": null
+      },
+      "offer": {
+        "scent": "Autumn spice",
+        "seasonal_verified": true,
+        "packs": 6,
+        "wipes_per_pack": 48,
+        "item_price": 24,
+        "shipping": "unknown",
+        "tax": "unknown",
+        "fees": "unknown",
+        "stock": "in stock",
+        "source": "Fixture Merchant Second",
+        "retailer_unit_label": "$24 per wipe",
+        "date": "2030-10-10"
+      }
+    },
+    {
+      "id": "U3",
+      "request": "Find seasonal XL wipes delivered to Zone A. Tell me when they will arrive.",
+      "checked_date": "2030-10-10",
+      "lead": {
+        "scent": "Autumn spice",
+        "seasonal_verified": true,
+        "packs": 3,
+        "wipes_per_pack": 48,
+        "search_snippet_price": 9,
+        "search_snippet_stock": "in stock",
+        "current_page_price": 16,
+        "current_page_stock": "out of stock",
+        "cached_page_date": "2030-09-01",
+        "cached_destination": "Zone B",
+        "cached_arrival": "tomorrow"
+      }
+    },
+    {
+      "id": "U4",
+      "request": "Find this XL wipe at least 52% below normal retail price; I don't know its price.",
+      "offer": {
+        "scent": "Autumn spice",
+        "seasonal_verified": true,
+        "item_price": "hidden",
+        "normal_price": "unknown",
+        "coupon_terms": "52% off this exact product; this shopper is eligible",
+        "coupon_terms_source": "Synthetic retailer terms",
+        "shipping": "unknown",
+        "tax": "unknown",
+        "fees": "unknown"
+      }
+    }
+  ]
+}

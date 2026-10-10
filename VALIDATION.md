@@ -47,6 +47,23 @@ Queried Amazon, Walmart, and eBay; inspected candidate pages; performed one expa
 
 Public search retrieval can contain cached snapshots. No signed-in session, Austin-specific binding quote, retailer cart, inventory reservation, checkout, or purchase was tested or modified.
 
+## Unit-price and reference-price revision
+
+Revised SKILL.md blob: `a0d724087843ce6ee59c505751a6df95f8fdc0ae`. October 10, 2026. The original eight scenarios above remain evidence for the original pinned version; they were not rerun in this revision.
+
+The revised instructions add optional-budget searches, usable-unit counts, separate item and landed unit costs, reference-price savings versus normal-price discounts, verified seasonal-category matching, and ZIP-specific delivery checks. Structural validation passed; agent metadata still matches the workflow. Four further fixture-only requests were handled by a fresh agent context and reviewed by the primary agent:
+
+| Scenario | Observed behavior | Result |
+|---|---|---|
+| U1: bulk, delivered unit cost, seasonal filter | Calculated 144 and 288 wipes; preferred $24/288 over $18/144; excluded the nonseasonal candidate and disclosed higher spend. | Pass |
+| U2: first-search price and misleading unit label | Calculated 20% lower item cost per wipe across compatible pack sizes; corrected the unit label; distinguished reference savings from normal-price discounts and kept unknown landed cost provisional. | Pass |
+| U3: stale cheap snippet and wrong delivery destination | Used the current $16/out-of-stock offer rather than the $9 snippet; rejected a cached September “tomorrow” estimate for another destination. | Pass |
+| U4: hidden price and 52% coupon | Recognized the applicable coupon rate without claiming dollar savings, a landed total, or 52% below an unknown normal price. | Pass |
+
+Evidence: [fixture requests](tests/unit-fixtures.json) and [agent responses](tests/unit-transcript.md). These are four additional checks, not an exhaustive rerun or a certification. Actual XL dimensions were not supplied in the fixtures and the agent disclosed that evidence gap.
+
+A separate live public-browser seasonal-wipe check observed Target's DUMPkin Spice 3 × 48-count offer at $12.29, or $0.0853472 per wipe before shipping/tax. After setting the shopper's supplied shipping ZIP and selecting shipping, the page displayed an October 12 arrival estimate. The cached retailer page also displayed a $12.99 previous price; this is a retailer-markdown reference, not independently verified normal-price history. The exact ZIP and browser screenshot are intentionally omitted from this public record. No cart or checkout action occurred. Stock quantity for buying multiple 144-count units and the final tax/fee quote remain unverified.
+
 ## Remaining validation
 
 Live cart addition and duplicate-quantity handling remain untested. Successful real inventory holds, full checkout totals, arrival promises, cross-platform compatibility, exhaustive cheapest-price coverage, continuous monitoring, and purchases are not approved by this record. Retest meaningful skill changes before extending the status.
