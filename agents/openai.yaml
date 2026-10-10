@@ -1,9 +1,7 @@
 interface:
   display_name: Bargain Hunter
   short_description: Compare deals and optionally add your choice to cart
-  default_prompt: Use $bargain-hunter with Humanize Me to read back my requirements,
-    compare available offers, and add my chosen offer to cart only if I explicitly
-    request it.
+  default_prompt: "Use $bargain-hunter with Humanize Me to compare offers by total or unit cost, use my receipts only if I request it, and add my choice to cart only on explicit request."
   icon_small: assets/icon.svg
   icon_large: assets/icon.svg
 policy:

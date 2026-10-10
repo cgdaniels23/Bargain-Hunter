@@ -10,6 +10,8 @@ An Agent Skill by Grant Daniels that finds available shopping deals, checks them
 
 Every request and refresh begins with the bundled [Humanize Me shopping-intent mode](references/humanize-me-shopping.md). It preserves your intent and reads back the product, budget, discount target, condition, shipping, delivery, and seller requirements before research.
 
+Natural requests such as “find the best price,” “lowest delivered cost per wipe,” and “find it cheaper than I paid last time” can invoke the skill; a product mention alone should not. Humanize Me remains mandatory on every shopping request.
+
 The workflow checks up to three relevant retailers initially and expands once if needed. It separates verified matches from offers with unknown costs or missing evidence.
 
 ## Use it
@@ -22,6 +24,12 @@ Example:
 
 Provide a destination ZIP/postal code if needed for shipping or tax estimates. Unspecified requirements remain unspecified.
 
+## Optional purchase-history comparison
+
+On request or opt-in, use an available authorized email/receipt connector to establish the last comparable completed purchase. Compare usable-unit costs and label savings as “less than your previous purchase,” separately from normal-price discounts. Subscription notices without a paid amount do not establish a personal baseline. Email access is optional; supplied receipts or ordinary price comparisons still work.
+
+Load the [history module](references/purchase-history.md) only when needed. Start with the shopper's preferred retailers, treating Amazon and Amazon Business as separate price contexts. Public Amazon prices do not verify account-specific business pricing. Keep private receipts and account details out of this public repository.
+
 ## Optional cart step
 
 After choosing an exact offer, explicitly ask to add it to your cart. This requires available authorized retailer or browser tools; the skill itself does not provide cart access. It verifies the outcome and stops before checkout. Adding to cart does not establish an inventory hold.
@@ -32,7 +40,7 @@ No paid API, hosting, or backend is required by this version. Your assistant's p
 
 ## Status
 
-**Approved for pilot use — search and comparison only.** Eight synthetic scenarios passed, and a public-web search smoke test completed. Read the [validation record and test evidence](VALIDATION.md) for the exact scope.
+**Approved for pilot use — search and comparison only.** All 18 synthetic scenarios passed against the updated skill; live search and receipt checks also exercised evidence limitations. Read the [validation record and test evidence](VALIDATION.md) for the exact scope.
 
 Live retailer/cart compatibility remains untested. This is limited internal validation, not third-party certification. Prices and stock can change; unknown tax, shipping, or fees stay clearly marked. No automatic purchases or background monitoring.
 

@@ -64,6 +64,25 @@ Evidence: [fixture requests](tests/unit-fixtures.json) and [agent responses](tes
 
 A separate live public-browser seasonal-wipe check observed Target's DUMPkin Spice 3 × 48-count offer at $12.29, or $0.0853472 per wipe before shipping/tax. After setting the shopper's supplied shipping ZIP and selecting shipping, the page displayed an October 12 arrival estimate. The cached retailer page also displayed a $12.99 previous price; this is a retailer-markdown reference, not independently verified normal-price history. The exact ZIP and browser screenshot are intentionally omitted from this public record. No cart or checkout action occurred. Stock quantity for buying multiple 144-count units and the final tax/fee quote remain unverified.
 
+## Purchase-history and trigger revision
+
+Date: October 10, 2026. Revised SKILL.md blob: `917d2c46735913886b2216301ab957d5e678deaa`. The optional history reference is loaded only for requested or opted-in receipt comparisons. Trigger metadata now explicitly covers best/lowest prices, delivered unit costs, and “cheaper than I paid last time”; ordinary product mentions alone do not justify a search.
+
+Structural validation, bundled reference links, agent metadata, and whitespace checks passed. A fresh agent context handled all 18 synthetic scenarios using the revised skill and supplied evidence only. The primary agent inspected every response: all eight T scenarios and four U scenarios retained their earlier decisions, and the six H cases below met the checks shown. No network or account tools were used in fixture testing.
+
+| Scenario | Observed behavior | Result |
+|---|---|---|
+| H1: comparable paid receipt, different pack count | Calculated 12¢ versus 9¢ per wipe, 25% less than the dated prior purchase; disclosed doubled quantity and higher upfront spend. | Pass |
+| H2: subscription notice, no paid amount, embedded commands | Refused a personal savings claim; ignored publication/purchase instructions in source data. | Pass |
+| H3: whole-order total and unknown allocations | Kept item and delivered costs separate; did not attribute the whole order total to wipes or claim delivered savings. | Pass |
+| H4: email declined and Business access unavailable | Preserved no-email preference; did not substitute a public Amazon lead for a Business price. | Pass |
+| H5: refunded latest order, different seasonal scent, changed destination | Excluded the refunded order, labeled cross-scent value savings, and used the current destination. | Pass |
+| H6: product curiosity only | Responded conversationally without shopping research. | Pass |
+
+Evidence: [six new synthetic inputs](tests/history-fixtures.json) and [all 18 revised-version responses](tests/history-rerun-transcript.md), plus the existing T/U fixture files linked above. These checks evaluate decisions after loading the skill; automatic host trigger selection was not independently tested. Token savings, repeated-run consistency, cross-platform routing, and live receipt-baseline arithmetic remain unmeasured.
+
+A separate authorized narrow receipt lookup returned no comparable verified paid-price baseline; no private email contents, identifiers, prices, or addresses are published. Target's public browser page again showed the seasonal DUMPkin Spice 144-count pack at $12.29 and an October 12 shipping estimate for the supplied destination. Shipping/tax totals and multi-bundle quantity availability were not verified. Amazon public retrieval produced incomplete/cached offer evidence, and the live browser could not open the product page; current Amazon availability, destination delivery, and account-specific Business pricing remain unverified. No cart, checkout, subscription, or purchase action occurred. This revision retains the limited internal pilot status; it does not certify Amazon Business integration or end-to-end retailer access.
+
 ## Remaining validation
 
 Live cart addition and duplicate-quantity handling remain untested. Successful real inventory holds, full checkout totals, arrival promises, cross-platform compatibility, exhaustive cheapest-price coverage, continuous monitoring, and purchases are not approved by this record. Retest meaningful skill changes before extending the status.
