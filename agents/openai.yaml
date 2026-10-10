@@ -1,0 +1,15 @@
+interface:
+  display_name: Bargain Hunter
+  short_description: Compare deals and optionally add your choice to cart
+  default_prompt: Use $bargain-hunter with Humanize Me to read back my requirements,
+    compare available offers, and add my chosen offer to cart only if I explicitly
+    request it.
+  icon_small: assets/icon.svg
+  icon_large: assets/icon.svg
+policy:
+  products:
+  - chatgpt
+  - codex
+  - api
+  - atlas
+  allow_implicit_invocation: true
